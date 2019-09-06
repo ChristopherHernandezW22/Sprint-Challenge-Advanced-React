@@ -37,7 +37,7 @@ function SoccerPlayer(props) {
     setDarkMode(!darkMode);
   };
   return (
-    <div>
+    <div className="App">
       <button onClick={toggleMode}>Dark Mode Button</button>
       {props.players.map(player => (
         <div key={player.id}> {player.name}
