@@ -24,11 +24,23 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        < />
+        <SoccerPlayer players={this.state.players}/>
       </div>
     );
   }
+}
 
+function SoccerPlayer(props) {
+  return (
+    <div>
+      {props.players.map(player => (
+        <div key={player.id}> {player.name}
+                              {player.id}
+                              {player.country}
+                              {player.searches} 
+        </div>))}
+    </div>
+  )
 }
 
 export default App;
