@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import useDarkMode from './hooks/useDarkMode';
 
@@ -32,9 +31,14 @@ class App extends React.Component {
 }
 
 function SoccerPlayer(props) {
+  const [darkMode, setDarkMode] = useDarkMode(false);
+  const toggleMode = e => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
   return (
     <div>
-      <button onClick={}>Dark Mode Button</button>
+      <button onClick={toggleMode}>Dark Mode Button</button>
       {props.players.map(player => (
         <div key={player.id}> {player.name}
                               {player.id}
